@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram, Linkedin, Youtube, Mail, MessageCircle } from "lucide-react";
+import { Instagram, Linkedin, Mail, MessageCircle } from "lucide-react";
 import { contactConfig, getWhatsAppLink } from "@/config/contact";
 
 const footerLinks = {
@@ -51,7 +51,7 @@ export default function Footer() {
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href="https://linkedin.com/company/evolvify"
+                href="https://www.linkedin.com/company/evolvify-cloud/?viewAsMember=true"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-brand-blue hover:border-brand-blue/40 hover:bg-brand-blue/10 transition-all duration-200"
@@ -59,12 +59,12 @@ export default function Footer() {
                 <Linkedin className="w-4 h-4" />
               </a>
               <a
-                href="https://youtube.com/@evolvify"
+                href={getWhatsAppLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-brand-blue hover:border-brand-blue/40 hover:bg-brand-blue/10 transition-all duration-200"
+                className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-green-400 hover:border-green-400/40 hover:bg-green-400/10 transition-all duration-200"
               >
-                <Youtube className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -112,7 +112,7 @@ export default function Footer() {
             <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
               Contato
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               <li className="flex items-center gap-3">
                 <MessageCircle className="w-4 h-4 text-brand-gold flex-shrink-0" />
                 <a
@@ -124,15 +124,21 @@ export default function Footer() {
                   WhatsApp
                 </a>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-brand-gold flex-shrink-0" />
-                <a
-                  href={`mailto:${contactConfig.email.contact}`}
-                  className="text-white/50 text-sm hover:text-brand-gold transition-colors"
-                >
-                  {contactConfig.email.contact}
-                </a>
-              </li>
+              {[
+                contactConfig.email.comercial,
+                contactConfig.email.suporte,
+                contactConfig.email.financeiro,
+              ].map((email) => (
+                <li key={email} className="flex items-center gap-3">
+                  <Mail className="w-4 h-4 text-brand-gold flex-shrink-0" />
+                  <a
+                    href={`mailto:${email}`}
+                    className="text-white/50 text-sm hover:text-brand-gold transition-colors"
+                  >
+                    {email}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

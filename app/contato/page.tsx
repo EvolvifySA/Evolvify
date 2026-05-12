@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, CheckCircle2, Mail, MessageCircle } from "lucide-react";
+import { Send, CheckCircle2, MessageCircle } from "lucide-react";
 import { contactConfig, getWhatsAppLink } from "@/config/contact";
 
 export default function ContatoPage() {
@@ -102,22 +102,33 @@ export default function ContatoPage() {
             </span>
           </motion.a>
 
-          {/* Email */}
-          <motion.a
-            href={`mailto:${contactConfig.email.contact}`}
+          {/* Emails */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.05 }}
-            className="group flex items-center gap-4 glass-card border border-white/6 rounded-2xl p-5 hover:border-brand-blue/25 transition-all duration-200"
+            className="glass-card border border-white/6 rounded-2xl p-5 space-y-4"
           >
-            <div className="w-12 h-12 rounded-xl bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center flex-shrink-0">
-              <Mail className="w-5 h-5 text-brand-blue-light" />
-            </div>
-            <div>
-              <p className="text-white/40 text-xs mb-0.5">E-mail</p>
-              <p className="text-white font-medium text-sm">{contactConfig.email.contact}</p>
-            </div>
-          </motion.a>
+            {[
+              { label: "Comercial", email: contactConfig.email.comercial },
+              { label: "Suporte", email: contactConfig.email.suporte },
+              { label: "Financeiro", email: contactConfig.email.financeiro },
+            ].map(({ label, email }) => (
+              <a
+                key={email}
+                href={`mailto:${email}`}
+                className="group flex items-center gap-4 hover:opacity-80 transition-opacity"
+              >
+                <div className="w-10 h-10 rounded-xl bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center flex-shrink-0 text-lg">
+                  📧
+                </div>
+                <div>
+                  <p className="text-white/40 text-xs mb-0.5">{label}</p>
+                  <p className="text-white font-medium text-sm">{email}</p>
+                </div>
+              </a>
+            ))}
+          </motion.div>
 
           {/* Divider */}
           <div className="flex items-center gap-4 py-2">

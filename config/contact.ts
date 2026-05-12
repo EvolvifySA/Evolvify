@@ -1,16 +1,17 @@
 export const contactConfig = {
   whatsapp: {
-    number: "5583996666285",
+    number: "5583920037703",
     defaultMessage: "Olá! Vim pelo site da Evolvify e gostaria de conhecer as soluções.",
     businessApiUrl: "", // Preencher com URL da API futura
   },
   email: {
-    contact: "contato@evolvify.com.br",
-    support: "suporte@evolvify.com.br",
+    comercial: "comercial@evolvify.cloud",
+    suporte: "suporte@evolvify.cloud",
+    financeiro: "financeiro@evolvify.cloud",
   },
   social: {
     instagram: "https://instagram.com/evolvify",
-    linkedin: "https://linkedin.com/company/evolvify",
+    linkedin: "https://www.linkedin.com/company/evolvify-cloud/?viewAsMember=true",
     youtube: "https://youtube.com/@evolvify",
   },
   address: {

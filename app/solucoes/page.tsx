@@ -84,14 +84,6 @@ export default function SolucoesPage() {
                     {solution.description}
                   </p>
 
-                  {/* Example */}
-                  <div className="glass-card border border-brand-gold/15 rounded-xl p-4 mb-6">
-                    <p className="text-xs text-brand-gold font-semibold mb-1 uppercase tracking-wider">
-                      Caso real
-                    </p>
-                    <p className="text-white/60 text-sm italic">{solution.realExample}</p>
-                  </div>
-
                   {/* Tech stack */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     {solution.technologies.map((tech) => (
