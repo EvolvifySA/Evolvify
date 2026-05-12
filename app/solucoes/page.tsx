@@ -32,7 +32,7 @@ export default function SolucoesPage() {
       <section className="relative pt-32 pb-20 hex-bg overflow-hidden">
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-brand-blue/8 rounded-full blur-[100px]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }}>
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-blue/10 border border-brand-blue/20 text-brand-blue-light text-xs font-medium mb-6">
               Nossas soluções
             </span>
@@ -59,10 +59,10 @@ export default function SolucoesPage() {
               <motion.div
                 key={solution.id}
                 id={solution.id}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.3 }}
                 className={`scroll-mt-28 grid lg:grid-cols-2 gap-10 items-center ${
                   !isEven ? "lg:flex-row-reverse" : ""
                 } ${isIA ? "border border-brand-gold/20 rounded-3xl p-8 bg-brand-gold/3" : ""}`}
