@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight, Play, TrendingUp, Zap, Shield } from "lucide-react";
 
 const stats = [
-  { value: "10+", label: "Projetos entregues" },
+  { value: "12+", label: "Projetos entregues" },
   { value: "100%", label: "Clientes satisfeitos" },
   { value: "3x", label: "ROI médio em 1 ano" },
   { value: "24/7", label: "Suporte especializado" },
