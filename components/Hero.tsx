@@ -2,12 +2,13 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Play, TrendingUp, Zap, Shield } from "lucide-react";
 
 const stats = [
   { value: "12+", label: "Projetos entregues" },
   { value: "100%", label: "Clientes satisfeitos" },
-  { value: "3x", label: "ROI médio em 1 ano" },
+  { value: "3x", label: "Crescimento médio em 1 ano" },
   { value: "24/7", label: "Suporte especializado" },
 ];
 
@@ -17,6 +18,11 @@ export default function Hero() {
       {/* Background glows */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-blue/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-gold/5 rounded-full blur-[100px] pointer-events-none" />
+
+      {/* Mascote raio de fundo */}
+      <div className="absolute top-1/2 -translate-y-1/2 left-0 w-[600px] h-[600px] opacity-30 pointer-events-none select-none">
+        <Image src="/mascoteraio.svg" alt="" width={600} height={600} className="w-full h-full object-contain" />
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -91,7 +97,7 @@ export default function Hero() {
             >
               {[
                 { icon: Shield, text: "Projetos com garantia" },
-                { icon: TrendingUp, text: "ROI comprovado" },
+                { icon: TrendingUp, text: "Resultados comprovados" },
                 { icon: Zap, text: "Entrega ágil" },
               ].map(({ icon: Icon, text }) => (
                 <div key={text} className="flex items-center gap-2">
@@ -193,7 +199,7 @@ export default function Hero() {
                 <TrendingUp className="w-4 h-4 text-brand-gold" />
                 <div>
                   <p className="text-brand-gold font-bold text-xs">+312%</p>
-                  <p className="text-white/40 text-[8px]">ROI em 12 meses</p>
+                  <p className="text-white/40 text-[8px]">crescimento em 12 meses</p>
                 </div>
               </div>
             </motion.div>
@@ -223,17 +229,22 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6"
         >
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="text-center glass-card border border-white/5 rounded-2xl p-5"
-            >
-              <p className="text-3xl font-bold font-display gradient-text-blue mb-1">
-                {stat.value}
-              </p>
-              <p className="text-white/50 text-sm">{stat.label}</p>
-            </div>
-          ))}
+          {stats.map((stat) => {
+            const isClientes = stat.label === "Clientes satisfeitos";
+            const Wrapper = isClientes ? "a" : "div";
+            return (
+              <Wrapper
+                key={stat.label}
+                {...(isClientes ? { href: "#depoimentos" } : {})}
+                className={`text-center glass-card border border-white/5 rounded-2xl p-5 ${isClientes ? "hover:border-brand-gold/30 hover:shadow-glow-gold transition-all duration-200 cursor-pointer" : ""}`}
+              >
+                <p className="text-3xl font-bold font-display gradient-text-blue mb-1">
+                  {stat.value}
+                </p>
+                <p className={`text-sm ${isClientes ? "text-brand-gold/80" : "text-white/50"}`}>{stat.label}</p>
+              </Wrapper>
+            );
+          })}
         </motion.div>
       </div>
     </section>

@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   CreditCard, Users, Brain, Code2, LayoutDashboard,
-  Link2, Globe, BarChart3, ArrowRight, CheckCircle2,
+  Link2, Globe, BarChart3, MessageCircle, ArrowRight, CheckCircle2,
 } from "lucide-react";
 import { solutions } from "@/data/solutions";
 import CTA from "@/components/CTA";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  CreditCard, Users, Brain, Code2, LayoutDashboard, Link2, Globe, BarChart3,
+  CreditCard, Users, Brain, Code2, LayoutDashboard, Link2, Globe, BarChart3, MessageCircle,
 };
 
 export default function SolucoesPage() {
@@ -90,6 +90,26 @@ export default function SolucoesPage() {
                       <span key={tech} className="tech-badge">{tech}</span>
                     ))}
                   </div>
+
+                  {/* Referências */}
+                  {solution.references && solution.references.length > 0 && (
+                    <div className="mb-6">
+                      <p className="text-white/40 text-xs uppercase tracking-wider mb-2">Ver exemplos reais</p>
+                      <div className="flex flex-wrap gap-2">
+                        {solution.references.map((ref) => (
+                          <a
+                            key={ref.url}
+                            href={ref.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand-blue/10 border border-brand-blue/20 text-brand-blue-light text-xs hover:bg-brand-blue/20 hover:border-brand-blue/40 transition-all duration-150"
+                          >
+                            {ref.label} <ArrowRight className="w-3 h-3" />
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   <Link
                     href="/contato"

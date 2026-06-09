@@ -6,7 +6,7 @@ import { testimonials } from "@/data/testimonials";
 
 export default function Testimonials() {
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section id="depoimentos" className="relative py-24 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-dark-3/30 to-transparent" />
       <div className="absolute top-0 left-0 right-0 h-px section-divider" />
 

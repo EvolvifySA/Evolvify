@@ -13,6 +13,7 @@ import {
   BarChart3,
   ArrowRight,
 } from "lucide-react";
+import Image from "next/image";
 import { solutions } from "@/data/solutions";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -59,7 +60,7 @@ export default function Solutions() {
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8">
           {featured.slice(0, 3).map((solution, i) => {
             const Icon = iconMap[solution.icon];
-            const isAI = solution.id === "automacoes-ia";
+            const isAI = solution.id === "atendimento-virtual";
             return (
               <motion.div
                 key={solution.id}
@@ -90,7 +91,11 @@ export default function Solutions() {
                         ? "bg-brand-gold/10 border border-brand-gold/30 group-hover:bg-brand-gold/20"
                         : "bg-brand-blue/10 border border-brand-blue/20 group-hover:bg-brand-blue/20"
                     }`}>
-                      {Icon && <Icon className={`w-6 h-6 ${isAI ? "text-brand-gold" : "text-brand-blue-light"}`} />}
+                      {isAI ? (
+                        <Image src="/mascoteraio.svg" alt="" width={28} height={28} className="w-7 h-7 object-contain" />
+                      ) : (
+                        Icon && <Icon className="w-6 h-6 text-brand-blue-light" />
+                      )}
                     </div>
 
                     <h3 className={`font-bold text-xl mb-2 transition-colors ${

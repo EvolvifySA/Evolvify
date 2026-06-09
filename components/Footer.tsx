@@ -43,7 +43,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3">
               <a
-                href="https://instagram.com/evolvify"
+                href="https://instagram.com/evolvify.cloud"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-brand-blue hover:border-brand-blue/40 hover:bg-brand-blue/10 transition-all duration-200"

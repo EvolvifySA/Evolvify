@@ -10,7 +10,7 @@ export const contactConfig = {
     financeiro: "financeiro@evolvify.cloud",
   },
   social: {
-    instagram: "https://instagram.com/evolvify",
+    instagram: "https://instagram.com/evolvify.cloud",
     linkedin: "https://www.linkedin.com/company/evolvify-cloud/?viewAsMember=true",
     youtube: "https://youtube.com/@evolvify",
   },

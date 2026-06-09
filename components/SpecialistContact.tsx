@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Send, Sparkles } from "lucide-react";
+import { X, Send } from "lucide-react";
+import Image from "next/image";
 import AISpecialistChat from "./AISpecialistChat";
 import { openWhatsApp } from "@/lib/whatsapp";
 
@@ -49,13 +50,14 @@ export default function SpecialistContact() {
 
   return (
     <>
-      {/* Trigger invisível — acionado pelo mascote */}
+      {/* Trigger invisível — acionado por outros componentes */}
       <button
         id="specialist-contact-btn"
         onClick={() => setIsOpen(true)}
         className="hidden"
         aria-hidden="true"
       />
+
 
       {/* Modal */}
       <AnimatePresence>
@@ -81,11 +83,11 @@ export default function SpecialistContact() {
               {/* Header */}
               <div className="bg-gradient-to-r from-brand-blue-dark to-brand-blue p-4 flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center">
-                    <Sparkles className="w-4 h-4 text-brand-gold" />
+                  <div className="w-10 h-10 flex-shrink-0">
+                    <Image src="/mascotefeliz.svg" alt="Evo" width={40} height={40} className="w-10 h-10" />
                   </div>
                   <div>
-                    <p className="text-white font-semibold text-sm">IA Especialista Evolvify</p>
+                    <p className="text-white font-semibold text-sm">Evo — Assistente Evolvify</p>
                     <div className="flex items-center gap-1.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                       <p className="text-white/60 text-xs">Online agora</p>
@@ -127,7 +129,7 @@ export default function SpecialistContact() {
 
                       {selectedNeed && (
                         <div className="mb-3 px-2.5 py-1.5 rounded-lg bg-brand-blue/10 border border-brand-blue/20 inline-flex items-center gap-1.5">
-                          <Sparkles className="w-3 h-3 text-brand-gold" />
+                          <span className="text-xs text-brand-gold">✦</span>
                           <span className="text-xs text-brand-blue-light font-medium">{selectedNeed}</span>
                         </div>
                       )}
@@ -169,8 +171,8 @@ export default function SpecialistContact() {
                       animate={{ opacity: 1, scale: 1 }}
                       className="text-center py-6"
                     >
-                      <div className="w-14 h-14 bg-green-500/15 border border-green-500/30 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <Sparkles className="w-6 h-6 text-green-400" />
+                      <div className="w-14 h-14 mx-auto mb-3">
+                        <Image src="/mascotefeliz.svg" alt="Evo" width={56} height={56} className="w-full h-full" />
                       </div>
                       <h3 className="text-white font-bold text-base mb-2">
                         WhatsApp Aberto!

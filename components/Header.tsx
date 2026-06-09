@@ -10,17 +10,18 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { label: "Início", href: "/" },
+  { label: "Planos", href: "/#planos" },
   { label: "Sobre", href: "/sobre" },
   {
     label: "Soluções",
     href: "/solucoes",
     children: [
-      { label: "Automações com IA", href: "/solucoes#automacoes-ia" },
+      { label: "Biolink", href: "/solucoes#biolink" },
+      { label: "Atendimento Virtual", href: "/solucoes#atendimento-virtual" },
       { label: "Sistema Financeiro", href: "/solucoes#sistema-financeiro" },
       { label: "Gestão de Desempenho", href: "/solucoes#gestao-desempenho" },
       { label: "Dashboards", href: "/solucoes#dashboards" },
       { label: "Sistemas Sob Medida", href: "/solucoes#sistemas-sob-medida" },
-      { label: "Integrações", href: "/solucoes#integracoes" },
     ],
   },
   { label: "Insights", href: "/blog" },

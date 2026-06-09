@@ -37,9 +37,9 @@ const benefits = [
   },
   {
     icon: BarChart3,
-    title: "ROI comprovado",
+    title: "Resultados comprovados",
     description:
-      "Nossos projetos têm ROI médio de 3x no primeiro ano. Apresentamos o cálculo antes de começar.",
+      "Nossos projetos geram crescimento médio de 3x no primeiro ano. Apresentamos os números antes de começar.",
   },
   {
     icon: Headphones,

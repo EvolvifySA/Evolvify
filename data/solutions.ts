@@ -6,8 +6,14 @@ import {
   Globe,
   LayoutDashboard,
   Link2,
+  MessageCircle,
   Users,
 } from "lucide-react";
+
+export interface SolutionReference {
+  label: string;
+  url: string;
+}
 
 export interface Solution {
   id: string;
@@ -19,26 +25,51 @@ export interface Solution {
   realExample: string;
   technologies: string[];
   featured: boolean;
+  references?: SolutionReference[];
 }
 
 export const solutions: Solution[] = [
   {
-    id: "automacoes-ia",
-    icon: "Brain",
-    title: "Automações com IA",
-    shortDescription: "Automatize processos repetitivos e libere sua equipe para o que realmente importa.",
+    id: "biolink",
+    icon: "Link2",
+    title: "Biolink",
+    shortDescription: "Um link profissional com tudo que seu público precisa encontrar.",
     description:
-      "Implantamos automações inteligentes com Inteligência Artificial que eliminam tarefas manuais, erros humanos e retrabalho. De atendimento ao cliente a análise de dados, a IA trabalha 24h por dia pela sua empresa.",
+      "O Biolink da Evolvify é muito mais que um Linktree — é uma extensão estratégica da sua marca. Reunimos redes sociais, contato, portfólio, links importantes e o que mais precisar em uma página elegante, rápida e personalizada.",
     benefits: [
-      "Até 90% de redução em tarefas repetitivas",
-      "Atendimento 24/7 sem custo adicional",
-      "Análise de dados em segundos",
-      "Integração com WhatsApp, email e sistemas internos",
-      "ROI médio de 300% no primeiro ano",
+      "Design alinhado à identidade da sua marca",
+      "Centralize redes, contato e links importantes",
+      "Carregamento ultrarrápido em qualquer device",
+      "Fácil de compartilhar e memorizar",
+      "Entrega em até 3 dias úteis",
     ],
     realExample:
-      "Uma escola com 500 alunos automatizou matrículas, cobranças e comunicados, liberando 3 funcionários para atividades estratégicas.",
-    technologies: ["Claude AI", "OpenAI", "n8n", "Python", "Webhooks"],
+      "Instituto religioso centralizou redes sociais, doações e agenda de eventos em um único link profissional.",
+    technologies: ["Next.js", "Tailwind CSS", "Vercel", "Analytics"],
+    featured: false,
+    references: [
+      { label: "Bruno Freitas Nutri", url: "https://brunofreitasnutri.evolvify.cloud/" },
+      { label: "Instituto Danielle Azevedo", url: "https://institutodanielleazevedo.com.br/" },
+      { label: "Urbanas Comunicação", url: "https://urbanascomunicacao.com.br/" },
+    ],
+  },
+  {
+    id: "atendimento-virtual",
+    icon: "MessageCircle",
+    title: "Atendimento Virtual",
+    shortDescription: "Seu agente de IA que atende, qualifica e responde 24h por dia.",
+    description:
+      "Implantamos um agente de IA personalizado para o seu negócio — seja para confirmar agendamentos, tirar dúvidas, captar leads ou fazer atendimento completo. O bot aprende com os dados da sua empresa e atende como um humano.",
+    benefits: [
+      "Atendimento 24/7 sem custo de pessoal",
+      "Responde dúvidas, confirma agendamentos e capta leads",
+      "Treinado com os dados do seu negócio",
+      "Integração direta com WhatsApp",
+      "Resultados visíveis nos primeiros 30 dias",
+    ],
+    realExample:
+      "Clínica automatizou confirmações de consulta e reduziu faltas em 60%, sem contratar ninguém.",
+    technologies: ["Claude AI", "OpenAI", "n8n", "WhatsApp API", "Webhooks"],
     featured: true,
   },
   {
@@ -154,6 +185,9 @@ export const solutions: Solution[] = [
       "Uma consultoria triplicou sua geração de leads em 90 dias com uma nova landing page otimizada.",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
     featured: false,
+    references: [
+      { label: "Fraternidade Filhas de Santa Clara", url: "https://fraternidadedefsc.vercel.app/#/" },
+    ],
   },
   {
     id: "consultoria-digital",
@@ -164,7 +198,7 @@ export const solutions: Solution[] = [
       "Analisamos sua operação atual, identificamos gargalos tecnológicos e desenhamos um roadmap de transformação digital completo. Priorizamos investimentos com maior retorno e menor risco.",
     benefits: [
       "Diagnóstico completo em 5 dias",
-      "Roadmap priorizado por ROI",
+      "Roadmap priorizado por impacto",
       "Identificação de gargalos ocultos",
       "Benchmark com concorrentes do setor",
       "Acompanhamento de resultados",
@@ -183,6 +217,7 @@ export const solutionIcons: Record<string, React.ComponentType> = {
   Code2,
   LayoutDashboard,
   Link2,
+  MessageCircle,
   Globe,
   BarChart3,
 };

@@ -18,7 +18,7 @@ const steps = [
     number: "02",
     title: "Proposta Estratégica",
     description:
-      "Apresentamos um plano personalizado com as soluções priorizadas por ROI, cronograma e investimento.",
+      "Apresentamos um plano personalizado com as soluções priorizadas por impacto, cronograma e investimento.",
     duration: "2-3 dias",
     color: "brand-gold",
   },
@@ -105,12 +105,9 @@ export default function HowItWorks() {
                         </span>
                         <h3 className="text-white font-bold text-xl">{step.title}</h3>
                       </div>
-                      <p className="text-white/50 text-sm leading-relaxed mb-3">
+                      <p className="text-white/50 text-sm leading-relaxed">
                         {step.description}
                       </p>
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-blue/10 border border-brand-blue/20 text-brand-blue-light text-xs font-medium">
-                        ⏱ {step.duration}
-                      </span>
                     </div>
                   </div>
 
