@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -8,7 +8,7 @@ import { ArrowRight, Play, TrendingUp, Zap, Shield } from "lucide-react";
 const stats = [
   { value: "12+", label: "Projetos entregues" },
   { value: "100%", label: "Clientes satisfeitos" },
-  { value: "3x", label: "Crescimento médio em 1 ano" },
+  { value: "3x", label: "Crescimento mÃ©dio em 1 ano" },
   { value: "24/7", label: "Suporte especializado" },
 ];
 
@@ -21,7 +21,7 @@ export default function Hero() {
 
       {/* Mascote raio de fundo */}
       <div className="absolute top-1/2 -translate-y-1/2 left-0 w-[600px] h-[600px] opacity-30 pointer-events-none select-none">
-        <Image src="/mascoteraio.svg" alt="" width={600} height={600} className="w-full h-full object-contain" />
+        <Image src="/mascoteraio.webp" alt="" width={600} height={600} className="w-full h-full object-contain" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -37,7 +37,7 @@ export default function Hero() {
             >
               <Zap className="w-3.5 h-3.5 text-brand-gold" />
               <span className="text-xs font-medium text-brand-blue-light">
-                Tecnologia que transforma negócios
+                Tecnologia que transforma negÃ³cios
               </span>
             </motion.div>
 
@@ -51,7 +51,7 @@ export default function Hero() {
               Sua empresa
               <span className="block gradient-text-blue">merece tecnologia</span>
               <span className="block">
-                de <span className="gradient-text-gold">alto nível.</span>
+                de <span className="gradient-text-gold">alto nÃ­vel.</span>
               </span>
             </motion.h1>
 
@@ -62,7 +62,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-white/60 text-lg leading-relaxed mb-8 max-w-lg"
             >
-              Sistemas personalizados, automações com IA e dashboards inteligentes que eliminam retrabalho, aumentam produtividade e fazem seu negócio crescer com controle total.
+              Sistemas personalizados, automaÃ§Ãµes com IA e dashboards inteligentes que eliminam retrabalho, aumentam produtividade e fazem seu negÃ³cio crescer com controle total.
             </motion.p>
 
             {/* CTAs */}
@@ -76,7 +76,7 @@ export default function Hero() {
                 href="/contato"
                 className="btn-gold inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-brand-dark font-bold text-sm"
               >
-                Solicitar diagnóstico gratuito
+                Solicitar diagnÃ³stico gratuito
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <button
@@ -98,7 +98,7 @@ export default function Hero() {
               {[
                 { icon: Shield, text: "Projetos com garantia" },
                 { icon: TrendingUp, text: "Resultados comprovados" },
-                { icon: Zap, text: "Entrega ágil" },
+                { icon: Zap, text: "Entrega Ã¡gil" },
               ].map(({ icon: Icon, text }) => (
                 <div key={text} className="flex items-center gap-2">
                   <Icon className="w-4 h-4 text-brand-gold" />
@@ -108,7 +108,7 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right — Mockup visual */}
+          {/* Right â€” Mockup visual */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -176,8 +176,8 @@ export default function Hero() {
                 <div className="space-y-1.5">
                   {[
                     { text: "Nova venda confirmada", time: "agora", dot: "bg-green-400" },
-                    { text: "Relatório gerado automaticamente", time: "2min", dot: "bg-brand-blue" },
-                    { text: "Meta de MRR atingida 🎯", time: "5min", dot: "bg-brand-gold" },
+                    { text: "RelatÃ³rio gerado automaticamente", time: "2min", dot: "bg-brand-blue" },
+                    { text: "Meta de MRR atingida ðŸŽ¯", time: "5min", dot: "bg-brand-gold" },
                   ].map((item) => (
                     <div key={item.text} className="flex items-center gap-2 glass-card rounded-lg px-2.5 py-1.5">
                       <div className={`w-1.5 h-1.5 rounded-full ${item.dot} flex-shrink-0`} />
@@ -250,3 +250,4 @@ export default function Hero() {
     </section>
   );
 }
+

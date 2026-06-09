@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -50,7 +50,7 @@ export default function SpecialistContact() {
 
   return (
     <>
-      {/* Trigger invisível — acionado por outros componentes */}
+      {/* Trigger invisÃ­vel â€” acionado por outros componentes */}
       <button
         id="specialist-contact-btn"
         onClick={() => setIsOpen(true)}
@@ -84,10 +84,10 @@ export default function SpecialistContact() {
               <div className="bg-gradient-to-r from-brand-blue-dark to-brand-blue p-4 flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
                   <div className="w-10 h-10 flex-shrink-0">
-                    <Image src="/mascotefeliz.svg" alt="Evo" width={40} height={40} className="w-10 h-10" />
+                    <Image src="/mascotefeliz.webp" alt="Evo" width={40} height={40} className="w-10 h-10" />
                   </div>
                   <div>
-                    <p className="text-white font-semibold text-sm">Evo — Assistente Evolvify</p>
+                    <p className="text-white font-semibold text-sm">Evo â€” Assistente Evolvify</p>
                     <div className="flex items-center gap-1.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                       <p className="text-white/60 text-xs">Online agora</p>
@@ -124,12 +124,12 @@ export default function SpecialistContact() {
                       exit={{ opacity: 0, x: -20 }}
                     >
                       <p className="text-white/70 text-xs mb-3 leading-relaxed">
-                        Nossa IA especialista vai entender sua necessidade e indicar a melhor solução para sua empresa.
+                        Nossa IA especialista vai entender sua necessidade e indicar a melhor soluÃ§Ã£o para sua empresa.
                       </p>
 
                       {selectedNeed && (
                         <div className="mb-3 px-2.5 py-1.5 rounded-lg bg-brand-blue/10 border border-brand-blue/20 inline-flex items-center gap-1.5">
-                          <span className="text-xs text-brand-gold">✦</span>
+                          <span className="text-xs text-brand-gold">âœ¦</span>
                           <span className="text-xs text-brand-blue-light font-medium">{selectedNeed}</span>
                         </div>
                       )}
@@ -172,7 +172,7 @@ export default function SpecialistContact() {
                       className="text-center py-6"
                     >
                       <div className="w-14 h-14 mx-auto mb-3">
-                        <Image src="/mascotefeliz.svg" alt="Evo" width={56} height={56} className="w-full h-full" />
+                        <Image src="/mascotefeliz.webp" alt="Evo" width={56} height={56} className="w-full h-full" />
                       </div>
                       <h3 className="text-white font-bold text-base mb-2">
                         WhatsApp Aberto!
@@ -197,3 +197,4 @@ export default function SpecialistContact() {
     </>
   );
 }
+

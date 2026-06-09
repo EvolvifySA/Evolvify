@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { Check, Sparkles, Link2, Bot, ExternalLink } from "lucide-react";
@@ -50,14 +50,14 @@ function PlanCard({ plan, i }: { plan: PricingPlan; i: number }) {
                 <span className={`text-3xl font-bold font-display ${plan.featured ? "text-brand-gold" : "text-white"}`}>
                   {plan.monthlyPrice}
                 </span>
-                <span className="text-white/40 text-sm">/mês</span>
+                <span className="text-white/40 text-sm">/mÃªs</span>
               </div>
               {plan.monthlyNote && (
                 <p className="text-white/30 text-[10px] mt-0.5">{plan.monthlyNote}</p>
               )}
             </div>
             <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/8">
-              <span className="text-white/35 text-[10px]">Implementação</span>
+              <span className="text-white/35 text-[10px]">ImplementaÃ§Ã£o</span>
               <span className="text-white/60 text-xs font-semibold">{plan.setupPrice}</span>
             </div>
           </div>
@@ -66,7 +66,7 @@ function PlanCard({ plan, i }: { plan: PricingPlan; i: number }) {
             <p className={`text-3xl font-bold font-display ${plan.featured ? "text-brand-gold" : "text-white"}`}>
               {plan.setupPrice}
             </p>
-            <p className="text-white/35 text-xs mt-1">pagamento único</p>
+            <p className="text-white/35 text-xs mt-1">pagamento Ãºnico</p>
           </div>
         )}
       </div>
@@ -123,7 +123,7 @@ export default function Pricing() {
 
       {/* Mascote apontando */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[340px] h-[340px] opacity-20 pointer-events-none select-none">
-        <Image src="/mascoteapontando.svg" alt="" width={340} height={340} className="w-full h-full object-contain" />
+        <Image src="/mascoteapontando.webp" alt="" width={340} height={340} className="w-full h-full object-contain" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
@@ -138,14 +138,14 @@ export default function Pricing() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-blue/10 border border-brand-blue/20 text-brand-blue-light text-xs font-medium mb-4">
               <Link2 className="w-3.5 h-3.5" />
-              Presença Digital
+              PresenÃ§a Digital
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-4">
               Biolink &{" "}
               <span className="gradient-text-gold">Sites</span>
             </h2>
             <p className="text-white/50 text-lg max-w-xl mx-auto">
-              Sua presença digital profissional, entregue rápido e sem complicação.
+              Sua presenÃ§a digital profissional, entregue rÃ¡pido e sem complicaÃ§Ã£o.
             </p>
           </motion.div>
 
@@ -166,7 +166,7 @@ export default function Pricing() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/20 text-brand-gold text-xs font-medium mb-4">
               <Bot className="w-3.5 h-3.5" />
-              Automação com IA
+              AutomaÃ§Ã£o com IA
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-4">
               Agente de{" "}
@@ -188,3 +188,4 @@ export default function Pricing() {
     </section>
   );
 }
+
