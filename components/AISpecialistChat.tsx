@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -26,57 +26,57 @@ interface Flow {
 const flows: Record<string, Flow> = {
   start: {
     messages: [
-      "OlÃ¡! Sou a Evo, assistente virtual da Evolvify. ðŸ‘‹",
+      "Olá! Sou a Evo, assistente virtual da Evolvify. 👋",
       "O que sua empresa mais precisa agora?",
     ],
     chips: [
-      { label: "ðŸ¤– AutomaÃ§Ã£o com IA", flow: "automacao" },
-      { label: "ðŸ”— Biolink", flow: "biolink" },
-      { label: "ðŸŒ Site Profissional", flow: "site" },
-      { label: "ðŸ’¬ Atendimento Virtual", flow: "atendimento" },
-      { label: "ðŸ¤” NÃ£o sei por onde comeÃ§ar", flow: "nao-sei" },
+      { label: "🤖 Automação com IA", flow: "automacao" },
+      { label: "🔗 Biolink", flow: "biolink" },
+      { label: "🌐 Site Profissional", flow: "site" },
+      { label: "💬 Atendimento Virtual", flow: "atendimento" },
+      { label: "🤔 Não sei por onde começar", flow: "nao-sei" },
     ],
   },
   automacao: {
     messages: [
-      "Boa escolha! AutomaÃ§Ã£o com IA Ã© nossa especialidade. ðŸš€",
-      "O que vocÃª quer automatizar?",
+      "Boa escolha! Automação com IA é nossa especialidade. 🚀",
+      "O que você quer automatizar?",
     ],
     chips: [
       { label: "Atendimento no WhatsApp", flow: "automacao-whatsapp" },
-      { label: "CobranÃ§a e follow-up", flow: "automacao-cobranca" },
-      { label: "RelatÃ³rios e dashboards", flow: "automacao-relatorios" },
+      { label: "Cobrança e follow-up", flow: "automacao-cobranca" },
+      { label: "Relatórios e dashboards", flow: "automacao-relatorios" },
     ],
   },
   "automacao-whatsapp": {
     messages: [
-      "Perfeito! Um bot de atendimento no WhatsApp trabalha 24h por dia, sem custo de pessoal adicional. ðŸ’ª",
-      "Ele qualifica leads, responde dÃºvidas, agenda reuniÃµes e sÃ³ chama um humano quando o cliente estÃ¡ pronto para fechar.",
-      "Clientes nossos reduziram atÃ© 90% do trabalho manual e viram retorno jÃ¡ nos primeiros 30 dias. âš¡",
+      "Perfeito! Um bot de atendimento no WhatsApp trabalha 24h por dia, sem custo de pessoal adicional. 💪",
+      "Ele qualifica leads, responde dúvidas, agenda reuniões e só chama um humano quando o cliente está pronto para fechar.",
+      "Clientes nossos reduziram até 90% do trabalho manual e viram retorno já nos primeiros 30 dias. ⚡",
     ],
     chips: [{ label: "Quero saber mais", flow: "contato" }],
     done: true,
   },
   "automacao-cobranca": {
     messages: [
-      "CobranÃ§as e follow-up automÃ¡ticos eliminam a inadimplÃªncia sem constrangimento. ðŸ“¬",
-      "O sistema envia lembretes personalizados, renegocia automaticamente e mantÃ©m seu caixa sempre atualizado.",
+      "Cobranças e follow-up automáticos eliminam a inadimplência sem constrangimento. 📬",
+      "O sistema envia lembretes personalizados, renegocia automaticamente e mantém seu caixa sempre atualizado.",
     ],
     chips: [{ label: "Quero saber mais", flow: "contato" }],
     done: true,
   },
   "automacao-relatorios": {
     messages: [
-      "Imagine receber todo dia um relatÃ³rio completo do seu negÃ³cio direto no WhatsApp â€” sem abrir sistema nenhum. ðŸ“Š",
-      "Nossos dashboards conectam todas as fontes de dados e atualizam em tempo real. Gestores tomam decisÃµes 3x mais rÃ¡pido.",
+      "Imagine receber todo dia um relatório completo do seu negócio direto no WhatsApp — sem abrir sistema nenhum. 📊",
+      "Nossos dashboards conectam todas as fontes de dados e atualizam em tempo real. Gestores tomam decisões 3x mais rápido.",
     ],
     chips: [{ label: "Quero saber mais", flow: "contato" }],
     done: true,
   },
   biolink: {
     messages: [
-      "O Biolink da Evolvify Ã© muito mais que um Linktree â€” Ã© uma extensÃ£o da sua marca. ðŸ”—",
-      "Um Ãºnico link profissional com todas as suas redes, contato, portfÃ³lio e o que mais precisar.",
+      "O Biolink da Evolvify é muito mais que um Linktree — é uma extensão da sua marca. 🔗",
+      "Um único link profissional com todas as suas redes, contato, portfólio e o que mais precisar.",
     ],
     chips: [
       { label: "Ver planos e valores", flow: "biolink-planos" },
@@ -85,17 +85,17 @@ const flows: Record<string, Flow> = {
   },
   "biolink-planos": {
     messages: [
-      "Temos dois caminhos para vocÃª:",
-      "â€¢ Biolink: R$ 500 implementaÃ§Ã£o + R$ 100/mÃªs\nâ€¢ Biolink + Site: R$ 700 implementaÃ§Ã£o + R$ 200/mÃªs\nâ€¢ Site: R$ 500 implementaÃ§Ã£o + R$ 150/mÃªs",
-      "Entrega em poucos dias Ãºteis, sem burocracia. ðŸš€",
+      "Temos dois caminhos para você:",
+      "• Biolink: R$ 500 implementação + R$ 100/mês\n• Biolink + Site: R$ 700 implementação + R$ 200/mês\n• Site: R$ 500 implementação + R$ 150/mês",
+      "Entrega em poucos dias úteis, sem burocracia. 🚀",
     ],
     chips: [{ label: "Quero contratar", flow: "contato" }],
     done: true,
   },
   site: {
     messages: [
-      "Um site profissional faz toda a diferenÃ§a na hora de conquistar novos clientes. ðŸŒ",
-      "Que tipo de site vocÃª precisa?",
+      "Um site profissional faz toda a diferença na hora de conquistar novos clientes. 🌐",
+      "Que tipo de site você precisa?",
     ],
     chips: [
       { label: "Site institucional", flow: "site-institucional" },
@@ -104,68 +104,68 @@ const flows: Record<string, Flow> = {
   },
   "site-institucional": {
     messages: [
-      "Criamos sites institucionais modernos, rÃ¡pidos e com SEO configurado para vocÃª aparecer no Google. âœ…",
-      "R$ 500 de implementaÃ§Ã£o + R$ 150/mÃªs. Entrega em atÃ© 7 dias Ãºteis.",
+      "Criamos sites institucionais modernos, rápidos e com SEO configurado para você aparecer no Google. ✅",
+      "R$ 500 de implementação + R$ 150/mês. Entrega em até 7 dias úteis.",
     ],
     chips: [{ label: "Quero contratar", flow: "contato" }],
     done: true,
   },
   "site-landing": {
     messages: [
-      "Landing pages sÃ£o ideais para campanhas, lanÃ§amentos e captura de leads. ðŸŽ¯",
-      "Desenvolvemos com foco em conversÃ£o â€” cada elemento pensado para transformar visitante em cliente.",
-      "Entre em contato para um orÃ§amento personalizado.",
+      "Landing pages são ideais para campanhas, lançamentos e captura de leads. 🎯",
+      "Desenvolvemos com foco em conversão — cada elemento pensado para transformar visitante em cliente.",
+      "Entre em contato para um orçamento personalizado.",
     ],
-    chips: [{ label: "Quero um orÃ§amento", flow: "contato" }],
+    chips: [{ label: "Quero um orçamento", flow: "contato" }],
     done: true,
   },
   atendimento: {
     messages: [
-      "Nosso serviÃ§o de Atendimento Virtual garante que nenhum cliente fique sem resposta. ðŸ’¬",
-      "Qual Ã© o tamanho da sua operaÃ§Ã£o?",
+      "Nosso serviço de Atendimento Virtual garante que nenhum cliente fique sem resposta. 💬",
+      "Qual é o tamanho da sua operação?",
     ],
     chips: [
-      { label: "Pequeno negÃ³cio", flow: "atendimento-essencial" },
+      { label: "Pequeno negócio", flow: "atendimento-essencial" },
       { label: "Empresa maior", flow: "atendimento-empresarial" },
       { label: "Quero IA personalizada", flow: "atendimento-ia" },
     ],
   },
   "atendimento-essencial": {
     messages: [
-      "Plano Essencial: R$ 600 de implementaÃ§Ã£o + R$ 350/mÃªs. ðŸ“±",
-      "Inclui atendimento via WhatsApp, respostas humanizadas, agendamentos e relatÃ³rio mensal.",
+      "Plano Essencial: R$ 600 de implementação + R$ 350/mês. 📱",
+      "Inclui atendimento via WhatsApp, respostas humanizadas, agendamentos e relatório mensal.",
     ],
     chips: [{ label: "Quero contratar", flow: "contato" }],
     done: true,
   },
   "atendimento-empresarial": {
     messages: [
-      "Plano Empresarial: R$ 600 de implementaÃ§Ã£o + R$ 600/mÃªs. ðŸ¢",
-      "Maior volume de atendimentos, mÃºltiplos canais, relatÃ³rios semanais e gestor de conta dedicado.",
+      "Plano Empresarial: R$ 600 de implementação + R$ 600/mês. 🏢",
+      "Maior volume de atendimentos, múltiplos canais, relatórios semanais e gestor de conta dedicado.",
     ],
     chips: [{ label: "Quero contratar", flow: "contato" }],
     done: true,
   },
   "atendimento-ia": {
     messages: [
-      "A IA Personalizada Ã© treinada do zero com os dados do seu negÃ³cio. ðŸ¤–",
-      "Pode ser apenas de confirmaÃ§Ã£o, atendimento completo ou qualquer fluxo que vocÃª precisar.",
-      "O valor Ã© sob consulta â€” Ã© bem mais fÃ¡cil a gente entender sua operaÃ§Ã£o antes de precificar.",
+      "A IA Personalizada é treinada do zero com os dados do seu negócio. 🤖",
+      "Pode ser apenas de confirmação, atendimento completo ou qualquer fluxo que você precisar.",
+      "O valor é sob consulta — é bem mais fácil a gente entender sua operação antes de precificar.",
     ],
-    chips: [{ label: "Quero um orÃ§amento", flow: "contato" }],
+    chips: [{ label: "Quero um orçamento", flow: "contato" }],
     done: true,
   },
   "nao-sei": {
     messages: [
-      "Sem problema! Ã‰ muito comum nÃ£o saber por onde comeÃ§ar. ðŸ˜Š",
-      "Nossos especialistas fazem um diagnÃ³stico gratuito da sua operaÃ§Ã£o e indicam o que vai gerar mais resultado.",
-      "RÃ¡pido, sem compromisso e sem enrolaÃ§Ã£o. Vamos entender seu negÃ³cio antes de recomendar qualquer coisa. ðŸŽ¯",
+      "Sem problema! É muito comum não saber por onde começar. 😊",
+      "Nossos especialistas fazem um diagnóstico gratuito da sua operação e indicam o que vai gerar mais resultado.",
+      "Rápido, sem compromisso e sem enrolação. Vamos entender seu negócio antes de recomendar qualquer coisa. 🎯",
     ],
-    chips: [{ label: "Quero o diagnÃ³stico gratuito", flow: "contato" }],
+    chips: [{ label: "Quero o diagnóstico gratuito", flow: "contato" }],
     done: true,
   },
   contato: {
-    messages: ["Perfeito! Vou te conectar com nosso time agora. ðŸ™Œ"],
+    messages: ["Perfeito! Vou te conectar com nosso time agora. 🙌"],
     done: true,
   },
 };
@@ -247,7 +247,7 @@ export default function AISpecialistChat({ onSelectNeed }: AISpecialistChatProps
       setMessages((prev) => [...prev, { id: Date.now(), from: "user", text: chip.label }]);
       setCurrentChips([]);
       setChipsDisabled(true);
-      addTypingThenMessage("Perfeito! Vou te conectar com nosso time agora. ðŸ™Œ", () => {
+      addTypingThenMessage("Perfeito! Vou te conectar com nosso time agora. 🙌", () => {
         setPhase("done");
         processingRef.current = false;
       });
@@ -280,7 +280,7 @@ export default function AISpecialistChat({ onSelectNeed }: AISpecialistChatProps
             <div className={`w-8 h-8 flex-shrink-0 ${msg.from !== "ai" ? "rounded-full bg-white/10 flex items-center justify-center" : ""}`}>
               {msg.from === "ai" ? (
                 <Image
-                  src={msg.typing ? "/mascotepensando.webp" : "/mascoteapontando.webp"}
+                  src={msg.typing ? "/mascotepensando.svg" : "/mascoteapontando.svg"}
                   alt="Evo"
                   width={32}
                   height={32}
@@ -335,7 +335,7 @@ export default function AISpecialistChat({ onSelectNeed }: AISpecialistChatProps
                 onClick={handleRestart}
                 className="text-[10px] px-2.5 py-1.5 rounded-full bg-white/5 border border-white/15 text-white/40 hover:text-white/70 hover:border-white/30 transition-all duration-150 font-medium flex items-center gap-1"
               >
-                <RotateCcw className="w-2.5 h-2.5" /> InÃ­cio
+                <RotateCcw className="w-2.5 h-2.5" /> Início
               </button>
             )}
           </motion.div>
@@ -354,13 +354,13 @@ export default function AISpecialistChat({ onSelectNeed }: AISpecialistChatProps
               onClick={() => onSelectNeed?.("contato")}
               className="w-full btn-gold py-2.5 rounded-xl text-brand-dark font-bold text-xs flex items-center justify-center gap-2"
             >
-              Falar com a equipe agora â†’
+              Falar com a equipe agora →
             </button>
             <button
               onClick={handleRestart}
               className="w-full py-2 rounded-xl text-white/40 text-[10px] hover:text-white/70 transition-colors flex items-center justify-center gap-1.5"
             >
-              <RotateCcw className="w-3 h-3" /> RecomeÃ§ar conversa
+              <RotateCcw className="w-3 h-3" /> Recomeçar conversa
             </button>
           </motion.div>
         )}
@@ -370,4 +370,3 @@ export default function AISpecialistChat({ onSelectNeed }: AISpecialistChatProps
     </div>
   );
 }
-

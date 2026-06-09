@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,13 +9,13 @@ export default function EvoMascot() {
   const [showBubble, setShowBubble] = useState(false);
   const [wave, setWave] = useState(false);
 
-  // Abre o balÃ£o automaticamente apÃ³s 4s
+  // Abre o balão automaticamente após 4s
   useEffect(() => {
     const t = setTimeout(() => setShowBubble(true), 4000);
     return () => clearTimeout(t);
   }, []);
 
-  // Acena a cada 6s para chamar atenÃ§Ã£o
+  // Acena a cada 6s para chamar atenção
   useEffect(() => {
     const interval = setInterval(() => {
       setWave(true);
@@ -26,7 +26,7 @@ export default function EvoMascot() {
 
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
-      {/* BalÃ£o de fala */}
+      {/* Balão de fala */}
       <AnimatePresence>
         {showBubble && (
           <motion.div
@@ -41,16 +41,16 @@ export default function EvoMascot() {
             >
               <X className="w-3 h-3" />
             </button>
-            {/* Cauda do balÃ£o */}
+            {/* Cauda do balão */}
             <div className="absolute -bottom-2 right-8 w-4 h-4 glass-card border-r border-b border-brand-blue/25 rotate-45" />
             <div className="flex items-center gap-2 mb-2">
-              <Image src="/mascotefeliz.webp" alt="Evo" width={20} height={20} className="w-5 h-5" />
+              <Image src="/mascotefeliz.svg" alt="Evo" width={20} height={20} className="w-5 h-5" />
               <span className="text-xs font-semibold text-brand-gold">Evo</span>
             </div>
             <p className="text-white/90 text-xs leading-relaxed mb-3">
-              OlÃ¡! Eu sou o <strong className="text-brand-gold">Evo</strong>.
+              Olá! Eu sou o <strong className="text-brand-gold">Evo</strong>.
               <br />
-              Vamos evoluir sua empresa? ðŸš€
+              Vamos evoluir sua empresa? 🚀
             </p>
             <button
               onClick={() => {
@@ -59,7 +59,7 @@ export default function EvoMascot() {
               }}
               className="w-full btn-gold text-xs py-2 px-3 rounded-lg text-brand-dark font-bold text-center"
             >
-              Falar com a IA âš¡
+              Falar com a IA ⚡
             </button>
           </motion.div>
         )}
@@ -94,7 +94,7 @@ export default function EvoMascot() {
 
         {/* Avatar */}
         <div className="relative w-16 h-16">
-          <Image src="/mascotefeliz.webp" alt="Evo" width={64} height={64} className="w-16 h-16" />
+          <Image src="/mascotefeliz.svg" alt="Evo" width={64} height={64} className="w-16 h-16" />
         </div>
 
         {/* Badge AI */}
@@ -109,4 +109,3 @@ export default function EvoMascot() {
     </div>
   );
 }
-

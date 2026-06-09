@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -48,11 +48,11 @@ export default function Solutions() {
             O que fazemos
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-4">
-            SoluÃ§Ãµes que{" "}
+            Soluções que{" "}
             <span className="gradient-text-gold">realmente resolvem</span>
           </h2>
           <p className="text-white/50 text-lg max-w-2xl mx-auto">
-            Cada soluÃ§Ã£o Ã© desenvolvida sob medida, com foco no problema real da sua empresa e no resultado que vocÃª precisa.
+            Cada solução é desenvolvida sob medida, com foco no problema real da sua empresa e no resultado que você precisa.
           </p>
         </motion.div>
 
@@ -78,7 +78,7 @@ export default function Solutions() {
                   <>
                     <div className="absolute inset-0 bg-gradient-to-br from-brand-gold/5 via-transparent to-brand-blue/5 pointer-events-none" />
                     <span className="absolute top-4 right-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-gold/15 border border-brand-gold/30 text-brand-gold text-xs font-bold">
-                      âš¡ Mais Vendido!
+                      ⚡ Mais Vendido!
                     </span>
                   </>
                 )}
@@ -92,7 +92,7 @@ export default function Solutions() {
                         : "bg-brand-blue/10 border border-brand-blue/20 group-hover:bg-brand-blue/20"
                     }`}>
                       {isAI ? (
-                        <Image src="/mascoteraio.webp" alt="" width={28} height={28} className="w-7 h-7 object-contain" />
+                        <Image src="/mascoteraio.svg" alt="" width={28} height={28} className="w-7 h-7 object-contain" />
                       ) : (
                         Icon && <Icon className="w-6 h-6 text-brand-blue-light" />
                       )}
@@ -111,7 +111,7 @@ export default function Solutions() {
                       <ul className="space-y-1.5 mb-5">
                         {solution.benefits.slice(0, 3).map((benefit) => (
                           <li key={benefit} className="flex items-start gap-2 text-xs text-white/40">
-                            <span className="text-brand-gold mt-0.5">âœ“</span>
+                            <span className="text-brand-gold mt-0.5">✓</span>
                             {benefit}
                           </li>
                         ))}
@@ -132,7 +132,7 @@ export default function Solutions() {
                     <ul className="flex-1 space-y-2 self-center">
                       {solution.benefits.map((benefit) => (
                         <li key={benefit} className="flex items-start gap-2 text-sm text-white/60">
-                          <span className="text-brand-gold mt-0.5 font-bold">âœ“</span>
+                          <span className="text-brand-gold mt-0.5 font-bold">✓</span>
                           {benefit}
                         </li>
                       ))}
@@ -155,11 +155,10 @@ export default function Solutions() {
             href="/solucoes"
             className="btn-primary inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-white font-semibold"
           >
-            Ver todas as soluÃ§Ãµes <ArrowRight className="w-4 h-4" />
+            Ver todas as soluções <ArrowRight className="w-4 h-4" />
           </Link>
         </motion.div>
       </div>
     </section>
   );
 }
-

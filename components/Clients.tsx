@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -17,7 +17,7 @@ export default function Clients() {
           className="text-center mb-10"
         >
           <p className="text-white/40 text-sm uppercase tracking-widest font-medium">
-            Empresas que jÃ¡ evoluÃ­ram com a gente
+            Empresas que já evoluíram com a gente
           </p>
         </motion.div>
 
@@ -29,7 +29,7 @@ export default function Clients() {
           className="glass-card border border-white/6 rounded-2xl p-6 flex items-center justify-center"
         >
           <Image
-            src="/clientes.webp"
+            src="/clientes.png"
             alt="Nossos clientes"
             width={900}
             height={300}
@@ -40,4 +40,3 @@ export default function Clients() {
     </section>
   );
 }
-
